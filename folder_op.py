@@ -12,19 +12,19 @@ def tao_thu_muc(name):
 
 
 # Hàm Lưu file
-# Truyền vào url cần lưu và Số thứ tự để đặt tên file cần lưu
+# Truyền vào link cần lưu và Số thứ tự để đặt tên file cần lưu
 def luu_file(url, stt):
     file = codecs.open('file' + str(stt) + '.html', 'w', 'utf8')
     file.write(requests.get(url).text)
     file.close()
 
 
-# Hàm lưu tất cả các url đã tim được
-# Truyền vào một List, set, tuples,... các URL hợp lệ
+# Hàm lưu tất cả các link đã tim được
+# Truyền vào một List, set, tuples,... các link hợp lệ
 def luu_tat_ca_file(history):
-    for (stt, url_con) in enumerate(history):
-        luu_file(url_con, stt)
-        print(f'{stt} {url_con}')
+    for (stt, link_con) in enumerate(history):
+        luu_file(link_con, stt)
+        print(f'{stt} {link_con}')
 
 
 def main():
